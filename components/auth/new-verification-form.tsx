@@ -8,11 +8,11 @@ import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
 
 export const NewVerificationForm = () => {
-  const [error, setError] = useState<string | undefined>("");
-  const [success, setSuccess] = useState<string | undefined>("");
-
   const searchParams = useSearchParams();
   const token = searchParams.get("token");
+
+  const [error, setError] = useState<string | undefined>("");
+  const [success, setSuccess] = useState<string | undefined>("");
 
   const onSubmit = useCallback(() => {
     if (success || error) return;
